@@ -19,7 +19,7 @@
 
         /* Header */
         header {
-            padding: 20px 50px;
+            padding: 0 50px;
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             display: flex;
@@ -133,10 +133,55 @@
             font-size: 1.3rem;
         }
 
+        .hero-testimonial {
+            margin-top: 25px;
+            padding: 15px 20px;
+            background: #f5f5f5;
+            border-left: 3px solid #c77dff;
+            border-radius: 5px;
+        }
+
+        .hero-testimonial p {
+            font-style: italic;
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            position: relative;
+            color: #333;
+        }
+
+        .hero-testimonial p:first-child::before {
+            content: '"';
+            font-size: 2rem;
+            color: #c77dff;
+            position: absolute;
+            left: -15px;
+            top: -5px;
+            font-family: Georgia, serif;
+        }
+
+        .hero-testimonial p:first-child::after {
+            content: '"';
+            font-size: 2rem;
+            color: #c77dff;
+            font-family: Georgia, serif;
+            line-height: 0;
+            vertical-align: text-bottom;
+            display: inline;
+        }
+
+        .hero-testimonial .author {
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            text-align: right;
+            opacity: 0.9;
+        }
+
         /* Form Container */
         .form-container {
             background: white;
-            padding: 25px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 5px 30px rgba(0,0,0,0.2);
         }
@@ -144,7 +189,7 @@
         .form-container h3 {
             color: #333;
             font-size: 1.1rem;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
             text-transform: uppercase;
             text-align: center;
         }
@@ -159,7 +204,7 @@
         .media-logos {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: 90px;
             animation: scroll 30s linear infinite;
         }
 
@@ -174,6 +219,34 @@
         .media-logos img:hover {
             opacity: 1;
             filter: grayscale(0%);
+        }
+
+        .media-logos img.nyt-large {
+            height: 98px;
+        }
+
+        .media-logos img.bbc-large {
+            height: 53px;
+        }
+
+        .media-logos img.ap-large {
+            height: 53px;
+        }
+
+        .media-logos img.today-large {
+            height: 53px;
+        }
+
+        .media-logos img.cnbc-large {
+            height: 61px;
+        }
+
+        .media-logos img.msn-large {
+            height: 53px;
+        }
+
+        .media-logos img.yahoo-large {
+            height: 53px;
         }
 
         @keyframes scroll {
@@ -332,11 +405,23 @@
                     <li><strong>Leverage</strong> AI trends to stay ahead</li>
                     <li><strong>Understand</strong> how the industry is fundamentally changing</li>
                 </ul>
+                <div class="hero-testimonial">
+                    <p>David and his team bring such expertise and confidence into all of their interactions. The wealth of experience they bring is more than worth it, but on top of it, their true commitment to their clients' success makes them one of the best firms we've hired, ever.</p>
+                    <p class="author">— ODETTE D'ANIELLO, DRAGONFLY CAKES</p>
+                </div>
             </div>
-            <div class="form-container">
+            <div class="form-container" style="padding: 15px; background: #ffffff;">
                 <h3>Get Your Free Copy</h3>
-                <iframe data-tally-src="https://tally.so/embed/jal871?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="252" frameborder="0" marginheight="0" marginwidth="0" title="Download FREE State of PR 2026"></iframe>
-                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                <iframe
+                    src="https://tally.so/embed/jal871?alignLeft=1&hideTitle=1&transparentBackground=1"
+                    loading="eager"
+                    width="100%"
+                    height="385"
+                    frameborder="0"
+                    scrolling="no"
+                    style="overflow: hidden;"
+                    title="Download FREE State of PR 2026">
+                </iframe>
             </div>
         </div>
     </section>
@@ -344,19 +429,25 @@
     <!-- Media Logos - Scrolling -->
     <div class="media-logos-wrapper">
         <div class="media-logos">
-            <img src="../images/cnbc-logo.png" alt="CNBC">
+            <img src="../images/cnbc-logo.png" alt="CNBC" class="cnbc-large">
             <img src="../images/bloomberg-logo.png" alt="Bloomberg">
             <img src="../images/cnn-logo.png" alt="CNN">
-            <img src="../images/bbc-logo.png" alt="BBC">
-            <img src="../images/ap-logo.png" alt="AP">
-            <img src="../images/nyt-logo.png" alt="The New York Times">
+            <img src="../images/bbc-logo.png" alt="BBC" class="bbc-large">
+            <img src="../images/ap-logo.png" alt="AP" class="ap-large">
+            <img src="../images/nyt-logo.png" alt="The New York Times" class="nyt-large">
+            <img src="../images/today-show-logo.png" alt="Today Show" class="today-large">
+            <img src="../images/msn-logo.png" alt="MSN" class="msn-large">
+            <img src="../images/yahoo-logo.png" alt="Yahoo" class="yahoo-large">
             <!-- Duplicate for seamless loop -->
-            <img src="../images/cnbc-logo.png" alt="CNBC">
+            <img src="../images/cnbc-logo.png" alt="CNBC" class="cnbc-large">
             <img src="../images/bloomberg-logo.png" alt="Bloomberg">
             <img src="../images/cnn-logo.png" alt="CNN">
-            <img src="../images/bbc-logo.png" alt="BBC">
-            <img src="../images/ap-logo.png" alt="AP">
-            <img src="../images/nyt-logo.png" alt="The New York Times">
+            <img src="../images/bbc-logo.png" alt="BBC" class="bbc-large">
+            <img src="../images/ap-logo.png" alt="AP" class="ap-large">
+            <img src="../images/nyt-logo.png" alt="The New York Times" class="nyt-large">
+            <img src="../images/today-show-logo.png" alt="Today Show" class="today-large">
+            <img src="../images/msn-logo.png" alt="MSN" class="msn-large">
+            <img src="../images/yahoo-logo.png" alt="Yahoo" class="yahoo-large">
         </div>
     </div>
 
@@ -364,7 +455,7 @@
     <section class="testimonial-section">
         <div class="testimonial">
             <p>"David and his team bring such expertise and confidence into all of their interactions. The wealth of experience they bring is more than worth it, but on top of it, their true commitment to their clients' success makes them one of the best firms we've hired, ever."</p>
-            <p class="author">— MILANA D'ANIELLO, CELEBRITY GOURMET / DRAGONFLY CAKES</p>
+            <p class="author">— ODETTE D'ANIELLO, DRAGONFLY CAKES</p>
         </div>
     </section>
 
