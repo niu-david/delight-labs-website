@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2026 State of PR Report - Delight Labs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo {
+            height: 105px;
+        }
+
+        .header-testimonial {
+            flex: 1;
+            max-width: 500px;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: #7b2cbf;
+        }
+
+        /* Hero Section - Compact Above-Fold Design */
+        .hero {
+            background: linear-gradient(135deg, #240046 0%, #7b2cbf 50%, #c77dff 100%);
+            padding: 40px 50px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150"><path d="M0,75 Q300,40 600,75 T1200,75 L1200,150 L0,150 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left h1 {
+            font-size: 2rem;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-left h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.3;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .benefits {
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        .benefits li {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .benefits li strong {
+            font-weight: 700;
+        }
+
+        .benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #c77dff;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+        }
+
+        .form-container h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Media Logos - Scrolling */
+        .media-logos-wrapper {
+            background: white;
+            overflow: hidden;
+            padding: 30px 0;
+        }
+
+        .media-logos {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            animation: scroll 30s linear infinite;
+        }
+
+        .media-logos img {
+            height: 35px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            filter: grayscale(100%);
+            flex-shrink: 0;
+        }
+
+        .media-logos img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 40px 50px 80px;
+            background: white;
+        }
+
+        .testimonial {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .testimonial .author {
+            text-align: right;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 40px 50px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        footer .logo {
+            height: 35px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #7b2cbf;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                height: 60px;
+            }
+
+            .header-testimonial {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .hero-left h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-left h2 {
+                font-size: 1rem;
+            }
+
+            .benefits li {
+                font-size: 0.95rem;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .media-logos-wrapper {
+                padding: 25px 0;
+            }
+
+            .testimonial-section {
+                padding: 30px 20px 60px;
+            }
+
+            .testimonial {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="../index.html">
+            <img src="../images/delight-labs-logo.jpg" alt="Delight Labs" class="logo">
+        </a>
+        <div class="header-testimonial">
+            "Our press hits have skyrocketed in the short period of time working with David and his team." — Jeff Hu, CEO SurrogateFirst
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">HOME</a></li>
+            <li><a href="../index.html#about">ABOUT</a></li>
+            <li><a href="index.html">REPORT</a></li>
+            <li><a href="../index.html#contact">CONTACT</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>The 2026 State of PR Report</h1>
+                <h2>How AI Search Is Reshaping PR Strategy for Growth-Stage Companies</h2>
+                <ul class="benefits">
+                    <li><strong>Learn</strong> what's changed with AI</li>
+                    <li><strong>Leverage</strong> AI trends to stay ahead</li>
+                    <li><strong>Understand</strong> how the industry is fundamentally changing</li>
+                </ul>
+            </div>
+            <div class="form-container">
+                <h3>Get Your Free Copy</h3>
+                <iframe data-tally-src="https://tally.so/embed/jal871?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="252" frameborder="0" marginheight="0" marginwidth="0" title="Download FREE State of PR 2026"></iframe>
+                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Logos - Scrolling -->
+    <div class="media-logos-wrapper">
+        <div class="media-logos">
+            <img src="../images/cnbc-logo.png" alt="CNBC">
+            <img src="../images/bloomberg-logo.png" alt="Bloomberg">
+            <img src="../images/cnn-logo.png" alt="CNN">
+            <img src="../images/bbc-logo.png" alt="BBC">
+            <img src="../images/ap-logo.png" alt="AP">
+            <img src="../images/nyt-logo.png" alt="The New York Times">
+            <!-- Duplicate for seamless loop -->
+            <img src="../images/cnbc-logo.png" alt="CNBC">
+            <img src="../images/bloomberg-logo.png" alt="Bloomberg">
+            <img src="../images/cnn-logo.png" alt="CNN">
+            <img src="../images/bbc-logo.png" alt="BBC">
+            <img src="../images/ap-logo.png" alt="AP">
+            <img src="../images/nyt-logo.png" alt="The New York Times">
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial">
+            <p>"David and his team bring such expertise and confidence into all of their interactions. The wealth of experience they bring is more than worth it, but on top of it, their true commitment to their clients' success makes them one of the best firms we've hired, ever."</p>
+            <p class="author">— MILANA D'ANIELLO, CELEBRITY GOURMET / DRAGONFLY CAKES</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="../images/delight-labs-logo.jpg" alt="Delight Labs" class="logo">
+        <p>&copy; 2026 Delight Labs. All rights reserved.</p>
+        <p><a href="../index.html">Return to Main Site</a></p>
+    </footer>
+</body>
+</html>
