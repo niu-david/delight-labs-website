@@ -98,13 +98,15 @@
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 550px;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover;
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600');
+            background-position: top center;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: calc(4rem + 80px) 5% 4rem 5%;
+            padding: calc(4rem + 105px) 5% calc(4rem - 10px) 5%;
             color: white;
         }
 
@@ -114,6 +116,7 @@
             max-width: 800px;
             line-height: 1.2;
             margin-bottom: 2rem;
+            margin-left: 400px;
         }
 
         .hero .highlight {
@@ -126,6 +129,7 @@
             font-style: italic;
             font-size: 1.1rem;
             line-height: 1.8;
+            margin-left: 400px;
         }
 
         .testimonial-author {
@@ -200,7 +204,7 @@
 
         /* Approach Section */
         .approach-section {
-            padding: 6rem 5%;
+            padding: 0 5% 6rem 5%;
             background: white;
         }
 
@@ -211,7 +215,7 @@
             margin-bottom: 1rem;
         }
 
-        .section-title::after {
+        .section-title::before {
             content: '';
             display: block;
             width: 80px;
@@ -594,10 +598,11 @@
 <body>
     <header>
         <div class="logo">
-            <img src="DelightLabs_Official.png" alt="Delight Labs" />
+            <img src="images/delight-labs-logo.jpg" alt="Delight Labs" />
         </div>
         <nav>
             <a href="#about">ABOUT</a>
+            <a href="report/index.html">REPORT</a>
             <a href="#contact">CONTACT</a>
         </nav>
     </header>
@@ -641,11 +646,12 @@
 
         <div class="approach-content">
             <div class="video-container">
-                <a href="https://youtu.be/Q5ww2p4kJHw" target="_blank" rel="noopener noreferrer" class="video-thumbnail-link">
-                    <div class="play-button-overlay">
-                        <div class="play-icon-large">▶</div>
-                    </div>
-                </a>
+                <iframe
+                    src="https://www.youtube.com/embed/Q5ww2p4kJHw"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
 
             <div class="approach-list">
@@ -691,7 +697,7 @@
         <div class="strategy-content">
             <div>
                 <h2>MEDIA<br>STRATEGY</h2>
-                <p>To align with your business goals, we strategize which outlets make the most sense and then create an execution plan to optimize placements from <span class="highlight">TV to online to print to podcasts to radio to social</span>.</p>
+                <p>To align with your business goals, we strategize which outlets make the most sense and then create a workback execution plan to optimize earned media placements like <span class="highlight">TV, online, print, and trade publications</span>.</p>
             </div>
             <div class="video-container">
                 <iframe
@@ -729,7 +735,7 @@
 
     <footer>
         <div class="footer-logo">
-            <img src="DelightLabs_Official.png" alt="Delight Labs" />
+            <img src="images/delight-labs-logo.jpg" alt="Delight Labs" />
         </div>
 
         <div class="footer-links">
@@ -742,7 +748,7 @@
         </div>
 
         <div class="copyright">
-            © 2025 DelightLabs. All Rights Reserved
+            © 2026 DelightLabs. All Rights Reserved
         </div>
     </footer>
 
